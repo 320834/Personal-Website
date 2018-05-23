@@ -1,0 +1,21 @@
+body {
+    background-color: aqua
+     
+}
+
+h1.headerClass {
+    background-color: aqua;
+    border-style: solid;
+    border-color: aqua;
+    border-width: 10px;
+   
+    margin: 20px
+    
+    text: center;
+}
+
+.image{
+    width:25px;
+    height:25px;
+}
+
