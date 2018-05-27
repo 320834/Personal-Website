@@ -1,36 +1,24 @@
-body {
+.main{
     background-color: bisque;
      
 }
 
 h1.headerClass {
-    background-color: white;
-   
-    border-width: 10px;
-   
-    margin-left: 40%;
-    margin-top: 4%;
-
+    background-color: green;
     
     
-}
-
-.table1
-{
-    margin-left: inherit;
-    margin-right: inherit;;
-}
-
-.table1First
-{
-    padding-left: 8%;
-    padding-right: 8%;
+    margin: inherit;
+    
+    text-align: center;
+    
+    
+    
 }
 
 
 .horizontal
 {
-    width: 680px;
+    width: 70%;
     
 }
 
@@ -44,34 +32,49 @@ h1.headerClass {
  
 }
 
-.division
+.nav1
 {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 8%;
+    width: 100%;
+    margin: inherit;
+    
+    border-top-style: solid;
+    border-bottom-style: solid;
+    
+    text-align: center;
+    
+    background-color: black;
 }
 
+.nav1A
+{
+    color: white;
+    margin-left: 4%;
+}
+
+/*Formats the photo*/
 .division1
 {
-    
+    margin: auto;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.divisionHeader
-{
-    
-}
 
-.footerClass
-{
-    
-}
 
+
+/*This formats the div for entire body*/
 .body
 {
-    background-color: white;
+    background-color: grey;
+/*
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 3%;
-    padding: 2%;
+*/
+    
+    margin: auto;
+    width: 60%;
+    
 }
 
