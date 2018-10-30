@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+
+    <head>
+        <title>Panda Programs</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta charset ="UTF-8">
+        
+        <script language="javascript" type="text/javascript" src = "https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+        
+        <script language="javascript" type="text/javascript" src = "snake.js"></script>
+    </head>
+    
+    <body class = "main" onkeypress = "changeMove(event)" onload = "init()">
+        
+        <div class = "body">
+        
+            <div class="logo">
+                
+                <div class = "logoWord"><h1>Panda Programs</h1></div>
+                <div class = "logoImage"><img></div>
+                
+            </div>
+            
+            <div class="nav">
+                <div class = "nav1"><a href = "home.html">Home</a></div>
+                <div class = "nav2"><a href = "snakegame.html">JavaScript Snake</a></div>
+                <div class = "nav3"><a href = "wordfinder.html">Word Finder</a></div>
+                
+            </div>
+            
+            <div id = "div2" style = "text-align:center">
+                <h3 style = "text-align:center">JavaScript Snake</h3>
+                <p style = "text-align:center">- Use WASD to start</p>
+            </div>
+            
+            <h3 style = "text-align:center">High Scores</h3>
+
+            <div class="divTable" style="width: 5%;" >
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                <div class="divTableCell">Name</div>
+                <div class="divTableCell">Score</div>
+            </div>
+            
+            <div class="divTableRow">
+                <div id = "1n" class="divTableCell"></div>
+                <div id = "1s" class="divTableCell"></div>
+            </div>
+            <div class="divTableRow">
+                <div id = "2n" class="divTableCell">&nbsp;</div>
+                <div id = "2s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "3n" class="divTableCell">&nbsp;</div>
+                <div id = "3s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "4n" class="divTableCell">&nbsp;</div>
+                <div id = "4s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "5n" class="divTableCell">&nbsp;</div>
+                <div id = "5s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "6n" class="divTableCell">&nbsp;</div>
+                <div id = "6s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "7n" class="divTableCell">&nbsp;</div>
+                <div id = "7s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "8n" class="divTableCell">&nbsp;</div>
+                <div id = "8s" class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div id = "9n" class="divTableCell">&nbsp;</div>
+                <div id = "9s" class="divTableCell">&nbsp;</div>
+            </div>
+            
+            <div class="divTableRow">
+                <div id = "10n" class="divTableCell">&nbsp;</div>
+                <div id = "10s" class="divTableCell">&nbsp;</div>
+            </div>
+        </div>
+        </div>
+            
+            <div class="content">
+                <div style = "text-align: center">
+                    <canvas style = "border-style: solid" id = "demoCanvas" width = "500" height="500"></canvas>
+                </div>
+            </div>
+
+            
+             
+        </div>
+        
+    </body>
+
+
+
+</html>

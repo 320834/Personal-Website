@@ -1,0 +1,95 @@
+.main
+{
+    background-color: lightcyan;
+}
+
+/*
+This is the main div container. Using the CSS Grid Layout
+*/
+.body
+{
+    background-color: lightcyan;
+    width: 60%;
+    margin-left: 20%;
+    
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    
+
+}
+
+.logo
+{
+    text-align: center;
+}
+
+.nav
+{
+    display: grid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nav1
+{
+    grid-row:1;
+    grid-column:1;
+    text-align: center;
+}
+
+.nav2
+{
+    grid-row:1;
+    grid-column:2;
+    text-align: center;
+}
+
+.nav3
+{
+    grid-row: 1;
+    grid-column: 3;
+    text-align: center;
+}
+
+.content
+{
+    
+}
+
+/* DivTable.com */
+.divTable{
+
+	display: table;
+    margin-left: 45%;
+    margin-right: 40%;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
