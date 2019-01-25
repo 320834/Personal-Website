@@ -205,7 +205,27 @@ function loopFunction(v)
 
 			//Check if lost conditions are met. If so then it prompts user that they 
 			//have lost and restarts the game
-			checkLoseConditions()
+			if(checkLoseConditions())
+			{
+				alert("You Lost");
+				//Post scores to server
+
+
+
+				if(score > document.getElementById("5s").textContent)
+				{
+					//now post to server
+					alertInput();
+				}
+				else
+				{
+
+				}
+
+				//post("/scoreSnake",{score: this.score},"POST");
+
+				restart();
+			}
 
 
 			//Check collsion for food
@@ -228,7 +248,7 @@ function loopFunction(v)
 			stage.update();
 
 
-		}, 75);
+		}, 125);
     	
     }
 }
@@ -282,26 +302,15 @@ function checkLoseConditions()
 	{
 		clearInterval(loop);
 		endGame = true;
-		alert("You Lost");
-		//Post scores to server
-
-		post("/scoreSnake",{score: this.score},"POST");
-
-		restart();
-
+		
+		return true;
 
 	}
 	else if(snake[0].y < 0 || snake[0].y > stageDimensions)
 	{
 		clearInterval(loop);
 		endGame = true;
-
-		alert("You Lost");
-
-		//Posts score to server
-		post("/scoreSnake",{score: this.score},"POST");
-
-		restart();
+		return true;
 		
 	}
 
@@ -313,12 +322,7 @@ function checkLoseConditions()
 			clearInterval(loop);
 			endGame = true;
 
-			alert("You Lost");
-
-			//Posts score to server
-			post("/scoreSnake",{score: this.score},"POST");
-			restart();
-
+			return true;
 		}	
 	}
 }
@@ -345,7 +349,7 @@ function checkCollision(block, target)
 {
 	if(block.x === target.x && block.y === target.y)
 	{
-		console.log("Hit Block");
+		//console.log("Hit Block");
 		return true;
 	}
 
@@ -472,8 +476,7 @@ function spawnFood()
 //Function to remove food once snake eats it
 function removeFood()
 {
-	food.x = -50;
-	food.y = -50;
+
 
 	stage.removeChild(food);
 	stage.update();
@@ -518,6 +521,17 @@ function post(path, params, method) {
     form.submit();
 }
 
+function checkIfHighscore()
+{
+	if(score > document.getElementById("5s"))
+	{
+		console.log("Found score higher than last place");
+		return true;
+	} 
+
+	return false;
+}
+
 function alertInput()
 {
 	var person = prompt("Congragulations! You got a new high score. Please enter your name to immortalize your achievements on this website");
@@ -532,11 +546,5 @@ function alertInput()
 		}while(person === null || person === "");
 	}
 
-	post("/scorePostSnake",{name: person, score: getScore()});
-}
-
-function getScore()
-{
-	var x = document.getElementById("input").textContent;
-	return x;
+	post("/newhighscore",{name: person, score: this.score});
 }

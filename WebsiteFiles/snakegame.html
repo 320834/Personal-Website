@@ -2,100 +2,150 @@
 <html lang = "en-US">
 
     <head>
-        <title>Panda Programs</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Justin's Website</title>
         <meta charset ="UTF-8">
-        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
         <script language="javascript" type="text/javascript" src = "https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+
+        <script src ="snake.js"></script>
+    
+    <style>
+
+    .colorContent{
+       background-color: #e6e6e6;
+    }
+
+    .body{
+        text-align: center;
+    }
+
+    </style>
         
-        <script language="javascript" type="text/javascript" src = "snake.js"></script>
     </head>
+
     
     <body class = "main" onkeypress = "changeMove(event)" onload = "init()">
-        
-        <div class = "body">
-        
-            <div class="logo">
-                
-                <div class = "logoWord"><h1>Panda Programs</h1></div>
-                <div class = "logoImage"><img></div>
-                
-            </div>
-            
-            <div class="nav">
-                <div class = "nav1"><a href = "home.html">Home</a></div>
-                <div class = "nav2"><a href = "snakegame.html">JavaScript Snake</a></div>
-                <div class = "nav3"><a href = "wordfinder.html">Word Finder</a></div>
-                
-            </div>
-            
-            <div id = "div2" style = "text-align:center">
-                <h3 style = "text-align:center">JavaScript Snake</h3>
-                <p style = "text-align:center">- Use WASD to start</p>
-            </div>
-            
-            <h3 style = "text-align:center">High Scores</h3>
 
-            <div class="divTable" style="width: 5%;" >
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                <div class="divTableCell">Name</div>
-                <div class="divTableCell">Score</div>
-            </div>
-            
-            <div class="divTableRow">
-                <div id = "1n" class="divTableCell"></div>
-                <div id = "1s" class="divTableCell"></div>
-            </div>
-            <div class="divTableRow">
-                <div id = "2n" class="divTableCell">&nbsp;</div>
-                <div id = "2s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "3n" class="divTableCell">&nbsp;</div>
-                <div id = "3s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "4n" class="divTableCell">&nbsp;</div>
-                <div id = "4s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "5n" class="divTableCell">&nbsp;</div>
-                <div id = "5s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "6n" class="divTableCell">&nbsp;</div>
-                <div id = "6s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "7n" class="divTableCell">&nbsp;</div>
-                <div id = "7s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "8n" class="divTableCell">&nbsp;</div>
-                <div id = "8s" class="divTableCell">&nbsp;</div>
-            </div>
-            <div class="divTableRow">
-                <div id = "9n" class="divTableCell">&nbsp;</div>
-                <div id = "9s" class="divTableCell">&nbsp;</div>
-            </div>
-            
-            <div class="divTableRow">
-                <div id = "10n" class="divTableCell">&nbsp;</div>
-                <div id = "10s" class="divTableCell">&nbsp;</div>
-            </div>
-        </div>
-        </div>
-            
-            <div class="content">
-                <div style = "text-align: center">
-                    <canvas style = "border-style: solid" id = "demoCanvas" width = "500" height="500"></canvas>
-                </div>
-            </div>
+    <div style="margin-top: 2%" class = "container">
+        <h1 class = "display-4">Panda Programs</h1>
+        
+    </div>
 
+
+
+    <div class="container">
+        <hr>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          
+          <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="snakegame.html">Javascript Snake</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="wordfinder.html">Word Finder</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <hr>
+
+        <div style = "background-color: white" class = "jumbotron body">
+
+          <div class = "row">
+            <div class = "col-6"><p class = "h3">High Scores</p></div>
+            <div class = "col-6"><p class = "h3">Instructions</p></div>
+
+          </div>
+          <div class = "row">
             
-             
+
+            <table class="table col-6">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td id = "1n">&nbsp;</td>
+                  <td id = "1s">&nbsp;</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td id = "2n">&nbsp;</td>
+                  <td id = "2s">&nbsp;</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td id = "3n">&nbsp;</td>
+                  <td id = "3s">&nbsp;</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td id = "4n">&nbsp;</td>
+                  <td id = "4s">&nbsp;</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td id = "5n">&nbsp;</td>
+                  <td id = "5s">&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class= "col-6">
+              
+              <ul>
+                Objective: Control Green Snake and consume red blocks
+                <br>
+                Controls (Keys):
+                <li>W : Up</li>
+                <li>A : Left</li>
+                <li>D : Right</li>
+                <li>S : Down</li>
+              </ul>
+
+              <p><b>**Note**</b></p>
+              
+              <p>Avoid hitting the boundaries of the box and the snake itself</p>
+              <p>Try to beat the high scores</p>
+
+            </div>
+          </div>
         </div>
+
+
+        <div class = "row">
+          <div class = "col-3"></div>
+          <div class = "col-4"><canvas style = "border-style: solid" id = "demoCanvas" width = "500" height="500"></canvas></div>
+          <div class = "col-5"></div>
+        </div>
+
+        <hr>
+
+        <div class = "footer">
+
+        </div>
+    </div>
+
+
+        
         
     </body>
 
