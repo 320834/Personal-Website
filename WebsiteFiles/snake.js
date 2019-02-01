@@ -1,3 +1,5 @@
+//Define Global Variables
+
 var stage;
 var circle;
 var endGame = false;
@@ -13,10 +15,14 @@ var stageDimensions = 500;
 var score = 0;
 var scoreText;
 
+//Loop body
 var loop;
 var food;
+var lastButton;
 
+//Snake body
 var snake = [];
+
 
 function init()
 {
@@ -61,11 +67,13 @@ function changeMove(event)
 {
 	var v = event.which || event.keyCode;
 
+	console.log("Pressed " + v);
+
 	if(!endGame)
 	{
 
-		//a = 97
-		if(v === 97)
+		//a = 65
+		if(v === 65)
 		{
 			if(xaxispos === true)
 			{
@@ -79,13 +87,13 @@ function changeMove(event)
 				yaxisneg = false;
 			}
 
-			clearInterval(loop);
-
+			
+			//clearInterval(loop);
 			stage.update();
 		}   
 
-    	//s = 115
-    	if(v === 115)
+    	//s = 83
+    	if(v === 83)
     	{
     		if(yaxisneg === true)
     		{
@@ -99,17 +107,18 @@ function changeMove(event)
     			yaxisneg = false;
     		}
 
-    		clearInterval(loop);
-
+    		//clearInterval(loop);
     		stage.update();
     	}
 
-    	//d = 100
-    	if(v === 100)
+    	//d = 68
+    	if(v === 68)
     	{
+
+    		//console.log("Stuff\n");
     		if(xaxisneg === true)
     		{
-
+    			//console.log("Here");
     		}
     		else
     		{
@@ -119,15 +128,12 @@ function changeMove(event)
     			yaxisneg = false;
     		}
 
-
-
-    		clearInterval(loop);
-
+    		//clearInterval(loop);
     		stage.update();
     	}
 
-    	//w = 119
-    	if(v === 119)
+    	//w = 87
+    	if(v === 87)
     	{
     		if(yaxispos === true)
     		{
@@ -141,27 +147,33 @@ function changeMove(event)
     			yaxisneg = true;
     		}
 
-
-
-    		clearInterval(loop);
-
+    		
     		stage.update();
     	}
 
-    	 //The loop code that moves last block in snake to front
-    	 loopFunction(v);
+    	//The loop code that moves last block in snake to front
+    	if(lastButton === v)
+    	{
 
     	}
+    	else
+    	{
+    		clearInterval(loop);
+    		loopFunction(v);
+    	}
 
+    	lastButton = v;
 
     }
+
+}
 
 
 //The main function of the game. Includes a loop that checks 
 //every 75 milliseconds
 function loopFunction(v)
 {
-    if(v === 97 || v === 115 || v === 100 || v === 119)
+    if(v === 68 || v === 65 || v === 83 || v === 87)
     {
     
     	loop = setInterval(function()
@@ -239,6 +251,8 @@ function loopFunction(v)
 				//Spawn and new food
 				spawnFood();
 
+				
+
 				score++;
 				scoreText.text = "Score: " + score;
 
@@ -248,7 +262,7 @@ function loopFunction(v)
 			stage.update();
 
 
-		}, 125);
+		}, 80);
     	
     }
 }
@@ -429,40 +443,53 @@ function addEnd()
 function spawnFood()
 {
 	//This do while loop finds the appropriate food
-	do
+	var flagX = false;
+	var flagY = false;
+
+	//Subtract 40 so that the spawning of food is not on the edge
+	var valueX = Math.floor(Math.random() * (stageDimensions - 40));
+	var valueY = Math.floor(Math.random() * (stageDimensions - 40));
+
+	if(valueX % 20 !== 0)
 	{
-		var flag = false;
-		var valueX = Math.floor(Math.random() * (stageDimensions));
-		var valueY = Math.floor(Math.random() * (stageDimensions));
-
-		if(valueX % 20 !== 0)
-		{
-			var r = valueX % 20;
-			valueX = valueX - r;
-		}
-
-		if(valueY % 20 !== 0)
-		{
-			var r = valueY % 20;
-			valueY = valueY - r;
-		}
-
-		for(var i = 0; i < snake.length; i++)
-		{
-			if(snake[i].x === valueX)
-			{
-				flag = true;
-			}
-
-			if(snake[i].y === valueY)
-			{
-				flag = true;
-			}
-		}
-
+		var r = valueX % 20;
+		valueX = valueX - r;
 	}
-	while(flag);
+
+	if(valueY % 20 !== 0)
+	{
+		var r = valueY % 20;
+		valueY = valueY - r;
+	}
+
+	valueX = valueX + 20;
+	valueY = valueY + 20;
 	
+		
+	for(var i = 0; i < snake.length; i++)
+	{
+		if(snake[i].x === valueX)
+		{
+			flagX = true;
+		}
+
+		if(snake[i].y === valueY)
+		{
+			flagY = true;
+		}
+	}
+
+	if(flagX)
+	{
+		valueX = valueX + 20;
+	}
+
+	if(flagY)
+	{
+		valueY = valueY + 20;
+	}
+
+
 	//Actual spawning of food
 	food = new createjs.Shape();
 	food.graphics.beginFill("#ff0000").drawRect(0,0,20,20);
@@ -481,6 +508,8 @@ function removeFood()
 	stage.removeChild(food);
 	stage.update();
 }
+
+
 
 
 //Win game condition
